@@ -1,0 +1,8 @@
+<h2>Assets</h2>
+<ul class="assets">
+  <li *ngFor="let asset of assets">
+    <a routerLink="/asset/{{asset.id}}">
+      <span class="badge">{{asset.id}}</span> {{asset.name}}
+    </a>
+  </li>
+</ul>
