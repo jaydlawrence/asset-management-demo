@@ -16,6 +16,35 @@
       <input [(ngModel)]="asset.quantity" placeholder="quantity">
     </label>
   </div>
+  <div *ngIf="asset.type == 'Printer'">
+    <label>voltage:
+      <input [(ngModel)]="asset.voltage" placeholder="voltage">
+    </label>
+  </div>
+  <div *ngIf="asset.type == 'Vehicle'">
+    <div>
+      <label>registration:
+        <input [(ngModel)]="asset.registration" placeholder="registration">
+      </label>
+    </div>
+    <div>
+      <label>fuel type:
+        <input [(ngModel)]="asset.fuelType" placeholder="fuel type">
+      </label>
+    </div>
+  </div>
+  <div *ngIf="asset.type == 'Phone'">
+    <div>
+      <label>brand:
+        <input [(ngModel)]="asset.brand" placeholder="brand">
+      </label>
+    </div>
+    <div>
+      <label>model:
+        <input [(ngModel)]="asset.model" placeholder="model">
+      </label>
+    </div>
+  </div>
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
 </div>

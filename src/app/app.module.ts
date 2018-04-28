@@ -12,12 +12,11 @@ import { AssetComponent } from './asset/asset.component';
 import { AssetService } from './asset.service';
 import { AppRoutingModule } from './/app-routing.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     AssetListComponent,
-    AssetComponent
+    AssetComponent,
   ],
   imports: [
     BrowserModule,
