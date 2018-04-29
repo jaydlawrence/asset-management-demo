@@ -40,7 +40,7 @@ I started with the [Angular Tour of Hereos tutorial](https://angular.io/tutorial
 
 I read through the tutorial and it looked like I could use a lot of the same functionality for my app.
 
-I initially tried a [Angular Material Starter project](https://github.com/tomastrajan/angular-ngrx-material-starter) to get up and going quickly on a project that already looks good (as the frontend styling and design is not my main strength). After messing with it for a while, I realised it had too much functionality that I didn't need and decided to go back to the Tutorial.
+I initially tried an [Angular Material Starter project](https://github.com/tomastrajan/angular-ngrx-material-starter) to get up and going quickly on a project that already looks good (as the frontend styling and design is not my main strength). After messing with it for a while, I realised it had too much functionality that I didn't need and decided to go back to the Tutorial.
 
 From there I built this app in a similar way to the tutorial, looking up the bits that weren't covered, but that I new that I needed.
 
