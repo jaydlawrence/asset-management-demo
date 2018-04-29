@@ -46,4 +46,9 @@ export class AssetComponent implements OnInit {
     this.assetService.addAsset(this.asset)
       .subscribe(() => this.goToList());
   }
+
+  delete(): void {
+    this.assetService.deleteAsset(this.asset)
+      .subscribe(() => this.goToList());
+  }
 }

@@ -1,14 +1,12 @@
 .asset-form {
     min-width: 150px;
     max-width: 500px;
-    width: 100%;
     margin: 0 auto 0 auto;
 }
-
-button.back-to-list {
-  margin-top: 20px;
+.mat-card-actions {
+  margin-bottom: 0;
 }
 
-p.asset-id {
-  font-size: 16px;
+button.delete {
+  background-color: red;
 }

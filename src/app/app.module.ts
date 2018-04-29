@@ -14,6 +14,7 @@ import {
   MatSelectModule,
   MatOptionModule,
   MatInputModule,
+  MatCardModule,
 } from '@angular/material';
 
 
@@ -49,6 +50,7 @@ import { AppRoutingModule } from './/app-routing.module';
     MatSelectModule,
     MatOptionModule,
     MatInputModule,
+    MatCardModule,
   ],
   providers: [
     AssetService,

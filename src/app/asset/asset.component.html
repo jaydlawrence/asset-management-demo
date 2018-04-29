@@ -1,80 +1,95 @@
 <div *ngIf="asset">
-  <div class="title-holder">
-    <h2>{{ asset.name || 'New Asset'}} Details</h2>
-  </div>
-  <div class="asset-form">
-    <p *ngIf="asset.id" class="asset-id">id: {{asset.id}}</p>
-    <mat-form-field class="full-width">
-      <input matInput [(ngModel)]="asset.name" placeholder="Name" pattern="[A-Za-z]+" required #name="ngModel"/>
-      <div *ngIf="name.errors && (name.dirty || name.touched)">
-        <mat-error *ngIf="name.errors.required">
-            Name is <strong>required</strong>
-        </mat-error>
-        <mat-error *ngIf="name.errors.pattern">
-            Name can only contain letters
-        </mat-error>
-      </div>
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <mat-select [(ngModel)]="asset.type" placeholder="Type" required #type="ngModel">
-        <mat-option ></mat-option>
-        <mat-option value="Phone">Phone</mat-option>
-        <mat-option value="Printer">Printer</mat-option>
-        <mat-option value="Vehicle">Vehicle</mat-option>
-      </mat-select>
-      <div *ngIf="type.errors && (type.dirty || type.touched)">
-        <mat-error *ngIf="type.errors.required">
-            Type is <strong>required</strong>
-        </mat-error>
-      </div>
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <input type="number" matInput [(ngModel)]="asset.quantity" placeholder="Quantity" required #quantity="ngModel"/>
-      <div *ngIf="quantity.errors && (quantity.dirty || quantity.touched)">
-        <mat-error *ngIf="quantity.errors.required">
-            Quantity is <strong>required</strong>
-        </mat-error>
-      </div>
-    </mat-form-field>
-    <mat-form-field *ngIf="asset.type == 'Printer'" class="full-width">
-      <input type="number" matInput [(ngModel)]="asset.voltage" placeholder="Voltage" />
-    </mat-form-field>
-    <div *ngIf="asset.type == 'Vehicle'">
+  <mat-card class="asset-form">
+    <mat-card-title>{{ asset.name || 'New Asset'}} Details</mat-card-title>
+    <mat-card-subtitle *ngIf="asset.id">id: {{asset.id}}</mat-card-subtitle>
+    <mat-card-content>
       <mat-form-field class="full-width">
-        <input matInput  [(ngModel)]="asset.registration" placeholder="Registration" />
+        <input matInput [(ngModel)]="asset.name" placeholder="Name" pattern="[A-Za-z]+" required #name="ngModel"/>
+        <div *ngIf="name.errors && (name.dirty || name.touched)">
+          <mat-error *ngIf="name.errors.required">
+              Name is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="name.errors.pattern">
+              Name can only contain letters
+          </mat-error>
+        </div>
       </mat-form-field>
       <mat-form-field class="full-width">
-        <input matInput [(ngModel)]="asset.fuelType" placeholder="Fuel type" />
+        <mat-select [(ngModel)]="asset.type" placeholder="Type" required #type="ngModel">
+          <mat-option ></mat-option>
+          <mat-option value="Phone">Phone</mat-option>
+          <mat-option value="Printer">Printer</mat-option>
+          <mat-option value="Vehicle">Vehicle</mat-option>
+        </mat-select>
+        <div *ngIf="type.errors && (type.dirty || type.touched)">
+          <mat-error *ngIf="type.errors.required">
+              Type is <strong>required</strong>
+          </mat-error>
+        </div>
       </mat-form-field>
-    </div>
-    <div *ngIf="asset.type == 'Phone'">
+      <mat-form-field class="full-width">
+        <input type="number" matInput [(ngModel)]="asset.quantity" placeholder="Quantity" required #quantity="ngModel"/>
+        <div *ngIf="quantity.errors && (quantity.dirty || quantity.touched)">
+          <mat-error *ngIf="quantity.errors.required">
+              Quantity is <strong>required</strong>
+          </mat-error>
+        </div>
+      </mat-form-field>
+      <mat-form-field *ngIf="asset.type == 'Printer'" class="full-width">
+        <input type="number" matInput [(ngModel)]="asset.voltage" placeholder="Voltage" />
+      </mat-form-field>
+      <div *ngIf="asset.type == 'Vehicle'">
         <mat-form-field class="full-width">
-          <input matInput  [(ngModel)]="asset.brand" placeholder="Brand" />
+          <input matInput  [(ngModel)]="asset.registration" placeholder="Registration" />
         </mat-form-field>
         <mat-form-field class="full-width">
-          <input matInput  [(ngModel)]="asset.model" placeholder="Model" />
+          <input matInput [(ngModel)]="asset.fuelType" placeholder="Fuel type" />
         </mat-form-field>
-    </div>
-    <button
-      [disabled]="name.errors || type.errors || quantity.errors"
-      mat-raised-button
-      class="full-width"
-      color="primary"
-      *ngIf="asset.id"
-      (click)="save()"
-    >
-      Save
-    </button>
-    <button
-      [disabled]="name.errors || type.errors || quantity.errors"
-      mat-raised-button
-      class="full-width"
-      color="primary"
-      *ngIf="!asset.id"
-      (click)="create()"
-    >
-      Create
-    </button>
-    <button mat-raised-button class="full-width back-to-list" (click)="goToList()">Back To List</button>
-  </div>
+      </div>
+      <div *ngIf="asset.type == 'Phone'">
+          <mat-form-field class="full-width">
+            <input matInput  [(ngModel)]="asset.brand" placeholder="Brand" />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput  [(ngModel)]="asset.model" placeholder="Model" />
+          </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        [disabled]="name.errors || type.errors || quantity.errors"
+        mat-raised-button
+        class="full-width"
+        color="primary"
+        *ngIf="asset.id"
+        (click)="save()"
+      >
+        Save
+      </button>
+    </mat-card-actions>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        class="full-width delete"
+        color="primary"
+        *ngIf="asset.id"
+        (click)="delete()"
+      >
+        Delete
+      </button>
+    </mat-card-actions>
+    <mat-card-actions>
+      <button
+        [disabled]="name.errors || type.errors || quantity.errors"
+        mat-raised-button
+        class="full-width"
+        color="primary"
+        *ngIf="!asset.id"
+        (click)="create()"
+      >
+        Create
+      </button>
+      <button mat-raised-button class="full-width back-to-list" (click)="goToList()">Back To List</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
