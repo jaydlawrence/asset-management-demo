@@ -8,3 +8,7 @@ div.title-holder {
 .full-width {
   width: 100%;
 }
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
