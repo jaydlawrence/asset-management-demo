@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/list', pathMatch: 'full' },
   { path: 'list', component: AssetListComponent },
   { path: 'asset/:id', component: AssetComponent },
+  { path: 'asset/new', component: AssetComponent },
 ];
 
 @NgModule({

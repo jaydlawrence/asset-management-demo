@@ -4,6 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatTableModule,
+  MatSortModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatInputModule,
+} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -29,6 +40,15 @@ import { AppRoutingModule } from './/app-routing.module';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatInputModule,
   ],
   providers: [
     AssetService,

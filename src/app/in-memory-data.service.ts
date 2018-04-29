@@ -5,7 +5,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const asset = [
       {
         id: 11,
-        name: 'My iphone',
+        name: 'Myiphone',
         type: 'Phone',
         quantity: 1,
         brand: 'Apple',
@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 12,
-        name: 'The Tesla',
+        name: 'TheTesla',
         type: 'Vehicle',
         quantity: 1,
         registration: 'MSG WEGG',
@@ -21,14 +21,14 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 13,
-        name: 'Office Printer',
+        name: 'OfficePrinter',
         type: 'Printer',
         quantity: 1,
         voltage: 220,
       },
       {
         id: 14,
-        name: 'My Pixel',
+        name: 'MyPixel',
         type: 'Phone',
         quantity: 1,
         brand: 'Google',
@@ -36,7 +36,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 15,
-        name: 'My Note',
+        name: 'MyNote',
         type: 'Phone',
         quantity: 1,
         brand: 'Samsung',
@@ -44,7 +44,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 16,
-        name: 'My Truck',
+        name: 'MyTruck',
         type: 'Vehicle',
         quantity: 1,
         registration: 'MSG 12WE',
@@ -52,7 +52,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 17,
-        name: 'The Mini',
+        name: 'TheMini',
         type: 'Vehicle',
         quantity: 1,
         registration: 'M23 36GG',
@@ -60,14 +60,14 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 18,
-        name: 'Kitchen Printers',
+        name: 'KitchenPrinters',
         type: 'Printer',
         quantity: 2,
         voltage: 110,
       },
       {
         id: 19,
-        name: 'Larry\'s Phone',
+        name: 'LarrysPhone',
         type: 'Phone',
         quantity: 1,
         brand: 'Samsung',
@@ -75,7 +75,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 20,
-        name: 'Tech Phone',
+        name: 'TechPhone',
         type: 'Phone',
         quantity: 1,
         brand: 'HTC',

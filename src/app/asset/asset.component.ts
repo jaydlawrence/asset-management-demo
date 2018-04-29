@@ -1,6 +1,6 @@
 import { Component, OnInit, Input  } from '@angular/core';
 import { Asset } from '../assets';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AssetService } from '../asset.service';
 import { Location } from '@angular/common';
 
@@ -13,6 +13,7 @@ export class AssetComponent implements OnInit {
   @Input() asset: Asset;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private assetService: AssetService,
     private location: Location
@@ -24,16 +25,25 @@ export class AssetComponent implements OnInit {
 
   getAsset(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.assetService.getAsset(id)
+    if (id) {
+      this.assetService.getAsset(id)
       .subscribe(asset => this.asset = asset);
+    } else {
+      this.asset = new Asset();
+    }
   }
 
-  goBack(): void {
-    this.location.back();
+  goToList(): void {
+    this.router.navigateByUrl('/list');
   }
 
   save(): void {
     this.assetService.updateAsset(this.asset)
-      .subscribe(() => this.goBack());
+      .subscribe(() => this.goToList());
+  }
+
+  create(): void {
+    this.assetService.addAsset(this.asset)
+      .subscribe(() => this.goToList());
   }
 }
