@@ -53,7 +53,25 @@ I subscribe to the philosophy that comments are a waste of time as they become o
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Setting up
+
+Make sure you have node and npm installed
+
+Install angluar CLI globally to be able to run the `ng` commands below.
+
+```
+npm install -g @angular/cli
+```
+
+Also install the dependencies for this project
+
+```
+npm install
+```
+
+### Running the server
+
+Run `ng serve` for a dev server (add `--open` to the end of it to have it open the page in the browser for you). Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
